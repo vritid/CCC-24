@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class J1 {
+  public static void main(String[] args) {
+    Scanner input = new Scanner (System.in); 
+    
+    /*Purpose: Your job is to determine the cost of a meal, given the number of plates of each colour chosen by a customer.*/
+    
+    System.out.println("How many red plates would you like?");
+    int numofredplates=input.nextInt();
+    
+    System.out.println("How many green plates would you like?");
+    int numofgreenplates=input.nextInt();
+
+    System.out.println("How many blue plates would you like?");
+    int numofblueplates=input.nextInt();
+
+    int costofredplates=numofredplates*3;
+    int costofgreenplates=numofgreenplates*4;
+    int costofblueplates=numofblueplates*5;
+
+    int totalcost=costofredplates+costofgreenplates+costofblueplates;
+    System.out.println ("Your total cost is $" + totalcost);
+  
+  }//main
+}//j1
