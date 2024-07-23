@@ -1,13 +1,11 @@
-//bug in code: incorrectly prints dusa's size if it is smaller than yobi
-
   import java.util.Scanner;
 
   public class Main {
     public static void main(String[] args) {
       Scanner input = new Scanner (System.in); 
 
-  /*Purpose:  Dusa is guaranteed to eventually encounter a Yobi that causes it to run away. Your job is to determine Dusa’s size when 
-              this happens.*/
+  /*Purpose:  Dusa is guaranteed to eventually encounter a Yobi that causes it to run away. Your job is to determine Dusa’s size 
+              when this happens.*/
 
       //ask user for dusa's size
       System.out.println ("What is Dusa's size?");
@@ -32,29 +30,35 @@
 
       //if dusa is smaller than yobi
      else {
+
+       //if dusa is smaller than yobi 1
+       if (dusasize<=yobisize1){
+         System.out.println("Dusa is smaller than Yobi. Her size is: "+dusasize);
+       }//if
+
        
-       // System.out.println("Dusa is smaller than Yobi. Her size is: "+dusasize);
+       //if dusa is bigger than yobi 1 but smaller or same size as yobi 2
+       if (dusasize<=yobisize2&&yobisize1<dusasize){
+         int dusanewsize = dusasize + yobisize1;
+          System.out.println("Dusa is smaller than Yobi. Her size is: "+dusanewsize);
+        }//if
 
-       if (dusasize<yobisize1){
-         System.out.println("Dusa is smaller than Yobi. Her size is: "+yobisize1);
-       }
-
-       if (dusasize<yobisize2){
-          System.out.println("Dusa is smaller than Yobi. Her size is: "+yobisize2);
-        }
-
-       if (dusasize<yobisize3){
-          dusasize=yobisize3;
-          System.out.println("Dusa is smaller than Yobi. Her size is: "+yobisize3);
-        }
-
-       if (dusasize<yobisize4&&yobisize1+yobisize2+yobisize3<yobisize4&&yobisize1<dusasize&&yobisize2<dusasize&&yobisize3<dusasize){
-          dusasize=yobisize4;
-          System.out.println("Dusa is smaller than Yobi. Her size is: "+yobisize4);
-        }
        
-      }//elseif
+       //if dusa is bigger than yobi 1 and 2 but smaller or same size as yobi 3
+       if (dusasize<=yobisize3&&yobisize2<dusasize&&yobisize1<dusasize){
+          int dusanewsizetwo=yobisize1+yobisize2+dusasize;
+          System.out.println("Dusa is smaller than Yobi. Her size is: "+dusanewsizetwo);
+        }//if
 
+       
+       //if dusa is bigger than yobi 1, 2, 3 but smaller or same size as yobi 4
+       if (dusasize<=yobisize4&&yobisize1+yobisize2+yobisize3<yobisize4&&yobisize1<dusasize&&yobisize2<dusasize&&yobisize3<dusasize){
+         int dusanewsizethree=yobisize1+yobisize2+yobisize3+dusasize;
+          System.out.println("Dusa is smaller than Yobi. Her size is: "+dusanewsizethree);
+        }//if
+
+       
+      }//else
 
     }//main
   }//j2
